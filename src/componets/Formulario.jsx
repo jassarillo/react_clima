@@ -1,11 +1,10 @@
-import { useClima } from "../hooks/useClima";
+//import  useClima  from "../hooks/useClima"
 
 const Formulario = () => {
 
-    const { busqueda, datosBusqueda } = useClima()
+ /*   const { busqueda, datosBusqueda } = useClima()
 
-    const { ciudad, pais } = busqueda
-
+    const { ciudad, pais } = busqueda*/
     return (
         <div className="contenedor">
             <form>
@@ -15,8 +14,7 @@ const Formulario = () => {
                     type="text"
                     id="ciudad"
                     name="ciudad"
-                    onChange={datosBusqueda}
-                    value={ciudad}
+                   
                     />
                 </div>
                 <div className="campo">
@@ -24,8 +22,7 @@ const Formulario = () => {
                     <select
                     id="pais"
                     name="pais"
-                    onChange={datosBusqueda}
-                    value={pais}
+                   
                     >
                         <option value="">Seleccione un país</option>
                         <option value="US">Estados Unidos</option>
