@@ -1,4 +1,5 @@
 import useClima from "../hooks/useClima"
+import { Link } from "react-router-dom";
 const Resultado = () => {
     
     const { resultado } = useClima()
@@ -17,6 +18,9 @@ const Resultado = () => {
             </p>
             <p>
                  Mínima { parseInt(main.temp_min - kelvin)} <span>&#x2103;</span>
+            </p>
+            <p>
+            ver liga: <Link type='button' to={'editar/'+kelvin}>{main.temp}</Link>
             </p>
 
             
