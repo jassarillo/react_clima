@@ -20,13 +20,13 @@ const BuscadorForm = () => {
     }
 
     return (
-        <div className="contenedor">
+        <div >
             {alerta && <p>{alerta}</p>}
             <form
             onSubmit={handleSubmit}
             >
                 <div className="campo">
-                    <label htmlFor="ciudad">  xxxxxx Ciudad</label>
+                  
                     <input
                     type="text"
                     id="ciudad"
@@ -34,25 +34,6 @@ const BuscadorForm = () => {
                     onChange={datosBusqueda}
                     value={ciudad}
                     />
-                </div>
-                <div className="campo">
-                    <label htmlFor="pais">Paìs</label>
-                    <select
-                    id="pais"
-                    name="pais"
-                    onChange={datosBusqueda}
-                    value={pais}
-                    >
-                        <option value="">Seleccione un país</option>
-                        <option value="US">Estados Unidos</option>
-                        <option value="MX">México</option>
-                        <option value="AR">Agentina</option>
-                        <option value="CO">Colombia</option>
-                        <option value="CR">Costa Rica</option>
-                        <option value="ES">España</option>
-                        
-
-                    </select>
                 </div>
                 <input
                 type="submit" 

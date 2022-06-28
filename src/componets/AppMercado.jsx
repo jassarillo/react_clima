@@ -7,12 +7,13 @@ export const AppMercado = () => {
     const {resultado } = useMercado()
     return (
         <>
-            <main className="dos-columnas">
+          
+            <header>
             <BuscadorForm/>
+            </header>
             {/*resultado?.query && <ResultadoMercado/>*/}
             {resultado?.query && <ResultadoMercado/>}
 
-            </main>
         </>
     )
 }

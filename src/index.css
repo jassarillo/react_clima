@@ -1,12 +1,13 @@
 body {
   font-family: 'Hubballi', cursive;
-  background-color: #f1f5f9;
+  background-color: #999999;
+  background-color: #EEEEEE;
   font-size: 1.6rem;
 }
 header {
   background-color: #0ea5e9;
   padding: 1.5rem;
-  border-bottom: 1rem solid #0284c7;
+  /*border-bottom: 1rem solid #0284c7;*/
 }
 header h1 {
   text-align: center;
@@ -40,6 +41,9 @@ main {
 }
 form {
   width: 100%;
+}
+#ciudad{
+  background: white;
 }
 .campo {
   max-width: 400px;

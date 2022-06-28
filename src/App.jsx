@@ -8,18 +8,18 @@ function App() {
 
   return (
     <Router>
-      <header>
-        <h1>Buscador...</h1>
-      </header> 
-
-
-
-
-    <MercadoProvider>
+     
+      <MercadoProvider>
       <Routes>
       <Route path='/' element={<AppMercado></AppMercado>}> </Route>
       </Routes>
     </MercadoProvider>
+
+
+
+
+
+    
 
 
 
