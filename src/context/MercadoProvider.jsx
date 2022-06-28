@@ -6,8 +6,8 @@ const MercadoContext = createContext()
 const MercadoProvider = ({children}) => {
 
     const [busqueda, setBusqueda] = useState({
-        ciudad: '',
-        pais: ''
+        ciudad: ''
+       
     })
 
     const [resultado, setResultado] = useState({})
@@ -21,19 +21,23 @@ const MercadoProvider = ({children}) => {
 
     const consultarClima = async datos => {
         try{
-            const { ciudad, pais} = datos
+            const { ciudad} = datos
 
             const appId = import.meta.env.VITE_API_KEY
             
+            //const url = `https://api.mercadolibre.com/sites/MLA/search?q=${ciudad}`
             const url = `http://api.openweathermap.org/geo/1.0/direct?q=${ciudad},${pais}&limit=1&appid=${appId}`
 
             
             const { data } = await axios(url)
+            //console.log(data[0])
             const { lat, lon } = data[0]
             
-            const urlClima = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appId}`
 
+            const urlClima = `https://api.mercadolibre.com/sites/MLA/search?q=${ciudad}`
+            //const urlClima = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appId}`
             const { data: clima } = await axios(urlClima)
+            //console.log(clima.results);
             setResultado(clima)
 
         }catch (error) {
