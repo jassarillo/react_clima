@@ -10,7 +10,7 @@ export const AppMercado = () => {
             <main className="dos-columnas">
             <BuscadorForm/>
             {/*resultado?.query && <ResultadoMercado/>*/}
-            {resultado && <ResultadoMercado/>}
+            {resultado?.query && <ResultadoMercado/>}
 
             </main>
         </>

@@ -160,3 +160,17 @@ form {
   justify-content: center;
   gap: 2rem;
 }
+
+.slick-slide{
+  width: 160px;
+}
+
+.slick-track{
+  opacity: 1; 
+  transform: translate3d(0px, 0px, 0px); 
+  width:480px;
+}
+
+.slick-list{
+  
+}
