@@ -12,9 +12,10 @@ const ClimaProvider = ({children}) => {
 
     const [resultado, setResultado] = useState({})
     const [cargando, setCargando] = useState(false)
+    const [noResultado, setNoResultado] = useState(false)
 
     const datosBusqueda = e =>{
-        setBusqueda({
+            setBusqueda({
             ...busqueda,
             [e.target.name]: e.target.value
         })
@@ -22,6 +23,7 @@ const ClimaProvider = ({children}) => {
 
     const consultarClima = async datos => {
         setCargando(true)
+        setNoResultado(false)
         try{
             const { ciudad, pais} = datos
 
@@ -37,21 +39,23 @@ const ClimaProvider = ({children}) => {
 
             const { data: clima } = await axios(urlClima)
             setResultado(clima)
-            
-            setCargando(false)
 
         }catch (error) {
-            console.log(error)
-        } 
+            setNoResultado('No hay resultado')
+        } finally {
+            setCargando(false)
+        }
         
     }
 
     return (
         <ClimaContext.Provider 
-        value={{busqueda, 
+        value={{
+            busqueda, 
             datosBusqueda,
             consultarClima,
             resultado,
+            setNoResultado,
             cargando
         }}
         >
